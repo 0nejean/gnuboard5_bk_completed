@@ -1,0 +1,139 @@
+@charset "UTF-8";
+
+#wrap_topic {
+  background: black;
+}
+// <!-- topic top -->
+// video
+.topic_youtube {
+  position: relative;
+  width: 100%;
+  height: 762px;
+  background-color: #333;
+  overflow: hidden;
+
+  .topic_youtube_area {
+    width: 100%;
+    position: absolute;
+
+    /* 16비율 */
+    left: 50%;
+    margin-left: calc(100% / -2);
+
+    /* 9비율 */
+    top: 50%;
+    margin-top: calc(100% * 9 / 16 / -2);
+
+    &::before {
+      content: "";
+      display: block;
+      /* 16:9 영상 비율로 요소 크기 만들기! */
+      width: 100%;
+      height: 0;
+      padding-top: 56.25%;
+    }
+    #topic_player {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
+}
+
+// slider
+.sliderText {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-right: 5%;
+  color: white;
+  .topic_h2 {
+    font-size: xxx-large;
+  }
+  .topic_p {
+    font-size: x-large;
+  }
+}
+
+.sliderBox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  color: black;
+  .slide {
+    /* 전체적인 요소를 감싸고 있는 앨리먼트 */
+    position: relative;
+    /* 커스텀 버튼 위치를 잡기 위해 relative를 줌 */
+    height: 500px;
+    width: 100%;
+    .slider-div {
+      /* slick을 적용시킬 요소 */
+      margin-left: auto;
+      margin-right: auto;
+      .item {
+        /* 슬라이드 되어야 할 아이템 */
+        width: 100%;
+        height: 400px;
+        border: 1px solid black;
+        background: black;
+        .item_g {
+          display: block;
+          width: 100%;
+          height: 400px;
+          text-indent: -9999px;
+          filter: brightness(1);
+          &:hover {
+            filter: brightness(0.5);
+          }
+        }
+        .slider_item_a1 {
+          background: url(../images/topic/topic_s1.jpg) 0 0 / cover no-repeat;
+        }
+        .slider_item_a2 {
+          background: url(../images/topic/topic_s2.jpg) 0 0 / cover no-repeat;
+        }
+        .slider_item_a3 {
+          background: url(../images/topic/topic_s3.jpg) 0 0 / cover no-repeat;
+        }
+        .slider_item_a4 {
+          background: url(../images/topic/topic_s4.jpg) 0 0 / cover no-repeat;
+        }
+        .slider_item_a5 {
+          background: url(../images/topic/topic_s5.jpg) 0 0 / cover no-repeat;
+        }
+      }
+    }
+
+    // .next,
+    // .prev {
+    //   /* 커스텀 버튼. 위치를 잡기위해 absolute 를 준다 */
+    //   position: absolute;
+    //   top: 35%;
+    // }
+    // .next {
+    //   right: 5%;
+    // }
+    // .prev {
+    //   left: 5%;
+    // }
+  }
+}
+// <!-- topic bottom -->
+// bottom
+#topic_bottom {
+  width: 100%;
+  height: 1000px;
+  .topic_bottom_bg {
+    display: block;
+    text-indent: -9999px;
+    width: 100%;
+    height: 1000px;
+    background: url(../images/topic/topic_bottom.jpg) 0 0 / cover no-repeat;
+    // object-fit: fill;
+  }
+}
